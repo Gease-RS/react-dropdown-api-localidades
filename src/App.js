@@ -20,7 +20,10 @@ function App() {
         <label htmlFor="state">Estado:</label>
         <DropdownBrazilianStates onChange={handleInputChange} />
         <label htmlFor="city">Cidade:</label>
-        <DropdownBrazilianCities state={formValues.state} />
+        <DropdownBrazilianCities
+          state={formValues.state}
+          onChange={handleInputChange}
+        />
       </form>
     </div>
   );
