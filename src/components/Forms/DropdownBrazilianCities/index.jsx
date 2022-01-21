@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { fetchCitiesForState } from "../../../helpers/ibge";
 
-const DropdownBrazilianCities = () => {
+const DropdownBrazilianCities = ({ state }) => {
   const [cities, setCities] = useState([]);
 
   useEffect(() => {
-    fetchCitiesForState("RS").then((cities) => {
+    fetchCitiesForState(state).then((cities) => {
       setCities(cities);
     });
-  }, []);
+  }, [state]);
 
   return (
     <select id="city">
